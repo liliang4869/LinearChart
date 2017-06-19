@@ -51,7 +51,7 @@ render(){
         }
         {//纵坐标
             this.Xlines.map((data,index)=>{
-                return <View style={{backgroundColor:'white',position:'absolute',right:leftAndTop+this.axisLengthX,top:data-5}} key={index}>
+                return <View style={{backgroundColor:'white',position:'absolute',right:this.props.style.width-leftAndTop,top:data-5}} key={index}>
                     <Text style={{fontSize:10}}>{this.props.ZeroY+(10-index)*this.props.DivY}</Text>
                     </View>
             })
@@ -71,13 +71,13 @@ render(){
 }
 LinearChart.defaultProps={
     ZeroY:0,
-    ZeroX:20,//坐标轴起始位置
+    ZeroX:0,//坐标轴起始位置
     DivX:30,//X轴每格数据量
-    DivY:30,//Y轴每格数据量
-    Xdens:1.1,//>1拉伸X轴 <1压缩X轴  
-    Ydens:1.5,//>1拉伸Y轴 <1压缩Y轴  
+    DivY:10,//Y轴每格数据量
+    Xdens:1,//>1拉伸X轴 <1压缩X轴  
+    Ydens:5,//>1拉伸Y轴 <1压缩Y轴  
     FxList:[5,10,86,32,42,52,45,63,72,86],
-    GapX:20,//x数据密度
+    GapX:30,//x数据密度
     startX:20,//x开始坐标
     style:{height:800,width:400}
 }
